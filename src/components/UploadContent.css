@@ -1,0 +1,344 @@
+/* UploadContent.css */
+.upload-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.upload-container {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  /* Assumes it's inside the modal, so no shadow needed here if modal has it */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.upload-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.upload-subheading {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+/* Drag & Drop Zone */
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.drop-zone:hover {
+  border-color: #6c5ce7;
+  background: #f4f1ff;
+}
+
+.drop-zone.drag-active {
+  border-color: #6c5ce7;
+  background: #e0d9ff;
+  transform: scale(1.02);
+}
+
+.drop-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.drop-text {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+.browse-link {
+  color: #6c5ce7;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Make the input cover the whole area but be invisible */
+.file-input-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* File List */
+.file-list {
+  margin-top: 15px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #eee;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4757;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+/* Helper Text */
+.upload-helper-text {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Warning Note Box */
+.upload-note-box {
+  background: #fff8e1; /* Light yellow */
+  border: 1px solid #ffecb3;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.note-icon {
+  font-size: 1.2rem;
+}
+
+.upload-note-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #7f6000;
+  line-height: 1.4;
+}
+
+/* Actions */
+.upload-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.continue-btn, .back-btn {
+  /* Reuse styles from previous steps for consistency */
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.continue-btn:active, .back-btn:active {
+  transform: scale(0.96);
+}
+
+/* UploadContent.css */
+
+/* ... (Keep your top sections the same) ... */
+
+.upload-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.upload-container {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #333; /* 🟢 Added: Ensures all base text in container is dark */
+}
+
+.upload-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.upload-subheading {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+/* Drag & Drop Zone */
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.drop-zone:hover {
+  border-color: #6c5ce7;
+  background: #f4f1ff;
+}
+
+.drop-zone.drag-active {
+  border-color: #6c5ce7;
+  background: #e0d9ff;
+  transform: scale(1.02);
+}
+
+.drop-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.drop-text {
+  font-size: 1rem;
+  color: #555; /* This ensures drop text is visible */
+  margin: 0;
+}
+
+.browse-link {
+  color: #6c5ce7;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.file-input-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* File List */
+.file-list {
+  margin-top: 15px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* 🟢 UPDATED SECTION: Fixed the visibility issue */
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa; /* Light background */
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #eee;
+  
+  /* 👇 THIS IS THE FIX 👇 */
+  color: #333333; 
+  font-weight: 500;
+}
+
+/* Optional: Ensure the specific filename text is dark */
+.file-name {
+  color: #333; 
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4757;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+/* Helper Text */
+.upload-helper-text {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Warning Note Box */
+.upload-note-box {
+  background: #fff8e1; 
+  border: 1px solid #ffecb3;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.note-icon {
+  font-size: 1.2rem;
+}
+
+.upload-note-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #7f6000;
+  line-height: 1.4;
+}
+
+/* Actions */
+.upload-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.continue-btn, .back-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.continue-btn:active, .back-btn:active {
+  transform: scale(0.96);
+}

@@ -1,0 +1,116 @@
+.est-section {
+  position: relative;
+  padding: 8vw 5vw; /* relative padding */
+  background: #000;
+  overflow: hidden;
+  perspective: 1000px;
+  color: #fff;
+}
+
+.est-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+.est-text {
+  max-width: 500px;
+  flex: 1 1 300px; /* grow/shrink with screen */
+  margin-bottom: 2rem; /* spacing for mobile */
+}
+
+.est-text h2 {
+  font-size: clamp(16px, 2vw, 24px); /* responsive font */
+  color: #aaa;
+}
+
+.est-text h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  margin: 10px 0;
+  color: #fff;
+}
+
+.est-text p {
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: #ccc;
+}
+
+/* BLOBS */
+.est-shapes {
+  position: relative;
+  width: clamp(200px, 35vw, 400px);
+  height: clamp(200px, 35vw, 400px);
+  transform-style: preserve-3d;
+  flex: 1 1 200px; /* responsive flex */
+  min-width: 200px;
+}
+
+/* general blob styles */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/* Blob sizes and positions adjusted to % */
+.blob-1 {
+  width: 30%;
+  height: 30%;
+  background: #ff6b6b;
+  top: 5%;
+  left: 10%;
+}
+
+.blob-2 {
+  width: 37%;
+  height: 37%;
+  background: #6bffb8;
+  top: 40%;
+  left: 20%;
+}
+
+.blob-3 {
+  width: 25%;
+  height: 25%;
+  background: #6b83ff;
+  top: 10%;
+  left: 60%;
+}
+
+/* BLOBS */
+.blob {
+  position: absolute;
+  width: 30%;   /* responsive width */
+  height: 30%;  /* responsive height */
+  object-fit: contain; /* keep image proportions */
+}
+
+/* Adjust positions individually */
+.blob-1 { top: 5%; left: 10%; }
+.blob-2 { top: 40%; left: 20%; }
+.blob-3 { top: 10%; left: 60%; }
+.blob-4 { top: 50%; left: 60%; }
+
+
+.blob-4 {
+  width: 32%;
+  height: 32%;
+  background: #f9ff6b;
+  top: 50%;
+  left: 60%;
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .est-container {
+    flex-direction: column-reverse; /* stack shapes below text */
+    align-items: center;
+  }
+
+  .est-shapes {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,157 @@
+/* --- Wrapper --- */
+.ca-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* --- Container --- */
+.ca-container {
+  font-family: 'Inter', system-ui, sans-serif;
+  max-width: 500px;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+}
+
+/* --- Headings --- */
+.ca-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a1a1aa; /* Muted gray for "Step 2" */
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.ca-subheading {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff; /* White text for question */
+  margin-top: 8px;
+  text-transform: none;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* --- Options Group --- */
+.ca-options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* --- Option Card (White) --- */
+.ca-option-card {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #ffffff; /* White card */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+}
+
+.ca-option-card:hover {
+  transform: translateY(-2px);
+  background-color: #f9fafb;
+}
+
+/* Active State */
+.ca-option-card.active {
+  border-color: #0070f3;
+  background-color: #f0f7ff;
+  box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.2);
+}
+
+.ca-option-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* --- Radio UI --- */
+.ca-radio-hidden { display: none; }
+
+.ca-radio-ui {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.ca-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #0070f3;
+  transform: scale(0);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ca-option-card.active .ca-radio-ui { border-color: #0070f3; }
+.ca-option-card.active .ca-radio-dot { transform: scale(1); }
+
+/* --- Visual Helper Box --- */
+.ca-helper-box {
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism dark */
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ca-helper-title {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.ca-examples-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ca-example-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+.ca-icon { font-size: 1.1rem; }
+
+/* --- Tip Box --- */
+.ca-tip-box {
+  display: flex;
+  gap: 12px;
+  background: rgba(234, 179, 8, 0.15); /* Yellow Tint */
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #fef08a; /* Light yellow text */
+  line-height: 1.4;
+}
+
+.ca-tip-icon { font-size: 1.2rem; }
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .ca-examples-grid { grid-template-columns: 1fr; }
+  .ca-subheading { font-size: 1.25rem; }
+}

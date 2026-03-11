@@ -1,0 +1,189 @@
+/* Container to give the banner some breathing room */
+.ready-post-wrapper {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #05000a; /* Matches your previous sections perfectly */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The Banner Canvas */
+.reels-banner {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 420px;
+  background-image: url("/assets/reels-bg.png"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Premium curved edges and border */
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(184, 127, 255, 0.15);
+}
+
+/* Cinematic Dark Gradient Overlay (Replaces the flat gray) */
+.reels-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 0, 43, 0.85) 0%, rgba(0, 0, 0, 0.75) 100%);
+  z-index: 1;
+}
+
+/* Content Container */
+.overlay {
+  position: relative;
+  z-index: 2; /* Keeps content above the dark overlay */
+  text-align: center;
+  color: #fff;
+  max-width: 750px;
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Glassmorphic Badge */
+.premium-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.badge-icon {
+  color: #00ff8f; /* Adds a premium neon pop */
+  font-size: 14px;
+}
+
+/* Typography */
+.overlay h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.gradient-highlight {
+  background: linear-gradient(90deg, #b87fff 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.overlay p {
+  font-size: 1.25rem;
+  color: #b3b3b3;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Sleek Call to Action Button */
+.premium-cta {
+  margin-top: 10px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+.premium-cta:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+  background: #f0f0f0;
+}
+
+.mobile-break {
+  display: none; /* Hide break on desktop */
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 1024px) {
+  .reels-banner {
+    min-height: 380px;
+  }
+  .overlay h1 {
+    font-size: 3.5rem;
+  }
+  .overlay p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ready-post-wrapper {
+    padding: 60px 15px;
+  }
+  .reels-banner {
+    min-height: 340px;
+    border-radius: 24px;
+  }
+  .overlay h1 {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+  }
+  .overlay p {
+    font-size: 1rem;
+  }
+  .mobile-break {
+    display: block; /* Forces "better reels?" to its own line on mobile */
+  }
+  .premium-cta {
+    padding: 14px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reels-banner {
+    min-height: 300px;
+    border-radius: 20px;
+  }
+  .overlay {
+    gap: 16px;
+    padding: 30px 15px;
+  }
+  .overlay h1 {
+    font-size: 2.2rem;
+  }
+  .overlay p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  .premium-badge {
+    font-size: 10px;
+    padding: 6px 14px;
+  }
+  .premium-cta {
+    margin-top: 5px;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    width: 100%; /* Full width button on small mobile */
+    max-width: 260px;
+  }
+}

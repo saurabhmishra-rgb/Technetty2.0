@@ -1,0 +1,188 @@
+/* Base Section */
+.why-section {
+  background: radial-gradient(circle at top left, #1a0033 0%, #05000a 60%, #000000 100%);
+  padding: 100px 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.why-container {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ---------- LEFT IMAGE & GLOW ---------- */
+.why-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 300px;
+}
+
+/* Atmospheric Glow Behind Image */
+.image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(184, 127, 255, 0.4) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.why-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Subtle floating animation */
+  animation: floatImage 6s ease-in-out infinite; 
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ---------- RIGHT CONTENT ---------- */
+.why-content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.brand-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+/* Premium Gradient Text */
+.gradient-text {
+  display: inline-block;
+  background: linear-gradient(135deg, #b87fff 0%, #ff7eb3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 8px;
+}
+
+.desc {
+  font-size: 16px;
+  color: #a0a0a0;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ---------- GLASSMORPHIC LIST CARDS ---------- */
+.premium-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.point-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 18px 24px;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #e0e0e0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.point-card:hover {
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.point-card.wrong:hover {
+  border-color: rgba(255, 74, 74, 0.3);
+}
+
+/* The Final "Right" Point - Highlighted */
+.point-card.highlight {
+  background: linear-gradient(90deg, rgba(0, 255, 143, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(0, 255, 143, 0.3);
+  color: #ffffff;
+}
+
+.point-card.highlight:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 255, 143, 0.15);
+}
+
+/* Icon Wrappers */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.icon-wrapper.error {
+  background: rgba(255, 74, 74, 0.1);
+}
+
+.icon-wrapper.success {
+  background: rgba(0, 255, 143, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 143, 0.4);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .why-section {
+    padding: 60px 20px;
+  }
+
+  .why-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .why-content {
+    max-width: 100%;
+  }
+
+  .brand-header h2 {
+    font-size: 38px;
+  }
+
+  .point-card {
+    text-align: left; /* Keep text readable while container is centered */
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+
+  .point-card:hover {
+    transform: none; /* Disable shift hover on mobile to prevent accidental scrolls */
+  }
+}

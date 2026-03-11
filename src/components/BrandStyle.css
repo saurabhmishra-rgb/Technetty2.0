@@ -1,0 +1,126 @@
+/* --- Wrapper & Container --- */
+.bsd-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.bsd-container {
+  font-family: 'Inter', system-ui, sans-serif;
+  max-width: 500px;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+}
+
+/* --- Headings --- */
+.bsd-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.bsd-subheading {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 8px;
+  text-transform: none;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* --- Question Groups --- */
+.bsd-question-group {
+  margin-bottom: 24px;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.bsd-question-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+/* --- Selectable Pills --- */
+.bsd-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bsd-radio-hidden {
+  display: none;
+}
+
+.bsd-pill {
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border: 2px solid transparent;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+ 
+}
+
+.bsd-pill:hover {
+  background: #e5e7eb;
+}
+
+/* Active State for Pills */
+.bsd-pill.active {
+  background: #f0f7ff;
+  border-color: #0070f3;
+  color: #0070f3;
+  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.15);
+}
+
+/* --- Helper Box --- */
+.bsd-helper-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.bsd-helper-icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.bsd-helper-box strong {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.bsd-helper-box p {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- Button Container --- */
+.bsd-btn-container {
+  text-align: center;
+}

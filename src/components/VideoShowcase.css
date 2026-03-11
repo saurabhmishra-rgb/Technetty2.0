@@ -1,0 +1,193 @@
+.video-section {
+  background: radial-gradient(circle at top, #150029, #05000a 70%);
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.video-heading {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 70px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #fff, #b5b5b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slider-viewport {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.slider-viewport:active {
+  cursor: grabbing;
+}
+
+/* Base Track (Desktop format) */
+.slider-track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 50px 0;
+  width: 100%; 
+}
+
+/* Desktop sizing: 3 cards fit perfectly */
+.video-card {
+  flex: 0 0 calc(33.333% - 40px);
+  margin: 0 20px;
+  position: relative;
+  will-change: transform, opacity; /* Optimizes GSAP performance */
+}
+
+/* Premium Wrapper forces strict 9:16 aspect ratio */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 177.77%; 
+  border-radius: 24px;
+  background: #0a0a0a;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.swipe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  z-index: 10;
+}
+
+.video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: auto;
+}
+
+.tap-to-unmute {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.6);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.tap-to-unmute:hover {
+  background: rgba(40, 40, 40, 0.8);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.slider-dots {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.slider-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.slider-dots .dot.active {
+  background: linear-gradient(135deg, #a600ff, #0044ff);
+  width: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(166, 0, 255, 0.4);
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 28px;
+  z-index: 20;
+  transition: all 0.3s ease;
+  padding-bottom: 4px; 
+}
+
+.slider-nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.slider-nav.prev { left: 15px; }
+.slider-nav.next { right: 15px; }
+
+/* 📱 MOBILE RESPONSIVE: Stacked Deck Mode */
+@media (max-width: 768px) {
+  .video-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .slider-track {
+    position: relative;
+    height: 65vh; /* Gives the absolute cards room to breathe */
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .video-card {
+    position: absolute; /* Crucial: This stacks the cards completely on top of each other */
+    width: 80vw;
+    max-width: 340px;
+    margin: 0; 
+  }
+
+  .slider-nav {
+    display: none; 
+  }
+}

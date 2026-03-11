@@ -1,0 +1,145 @@
+.pay-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pay-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pay-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-subheading {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.pay-summary-box {
+  background-color: #f8f9fa;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.pay-summary-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pay-line-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.pay-addons-section {
+  margin-top: 15px;
+}
+
+.pay-addons-title {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.pay-addon-item {
+  font-size: 0.9rem;
+  color: #666;
+  padding-left: 10px;
+}
+
+.pay-divider {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 15px 0;
+}
+
+.pay-total-line {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0;
+}
+
+.pay-advance-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.pay-advance-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-advance-text strong {
+  color: #2e7d32;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.pay-advance-text span {
+  color: #4caf50;
+  font-size: 0.8rem;
+}
+
+.pay-advance-amount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2e7d32;
+}
+
+.pay-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-btn {
+  background-color: #28a745; /* Green CTA */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+}
+
+.checkout-btn:active {
+  transform: scale(0.98);
+}

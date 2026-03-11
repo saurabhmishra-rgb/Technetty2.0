@@ -1,0 +1,182 @@
+/* Premium Section Background */
+.clients-section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px;
+  /* Softer, more luxurious background gradient */
+  background: radial-gradient(ellipse at top center, #1f0d3d 0%, #0a0514 50%, #000000 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.clients-container {
+  max-width: 1100px; /* Slightly wider for modern laptops */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- HEADER ---------- */
+.clients-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.clients-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 15px;
+  background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 4px 20px rgba(255, 255, 255, 0.1));
+}
+
+.clients-subtitle {
+  font-size: 1.15rem;
+  color: #a3a3a3;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.wink {
+  color: #a64aff;
+  font-weight: bold;
+}
+
+/* ---------- PREMIUM GRID ---------- */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px; 
+  width: 100%;
+}
+
+/* ---------- 3D GLASSMORPHIC CARDS ---------- */
+.client-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 30px;
+  
+  /* Advanced Glass Effect */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* Highlighted top edge for 3D depth */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: default;
+}
+
+/* Hover Physics */
+.client-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(166, 74, 255, 0.15);
+}
+
+/* Premium Icon Badges */
+.client-icon-wrapper {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 80%);
+  border-radius: 50%;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.client-icon {
+  font-size: 2.8rem;
+  color: #fff; /* Helps standardize unicode characters */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+}
+
+.client-card:hover .client-icon-wrapper {
+  transform: scale(1.15);
+  background: radial-gradient(circle, rgba(166, 74, 255, 0.2) 0%, transparent 80%);
+}
+
+.client-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .clients-title {
+    font-size: 3.8rem;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-section {
+    padding: 80px 20px;
+  }
+
+  .clients-title {
+    font-size: 3rem;
+  }
+
+  .clients-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+
+  .client-card {
+    padding: 25px 10px;
+    border-radius: 18px;
+    gap: 10px;
+  }
+
+  .client-icon-wrapper {
+    height: 50px;
+    width: 50px;
+  }
+
+  .client-icon {
+    font-size: 2rem;
+  }
+
+  .client-name {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  
+  .client-card:hover {
+    transform: none;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,196 @@
+/* --- Base Footer Styling --- */
+.footer {
+  /* Very subtle top gradient so it blends into the page above it */
+  background: radial-gradient(ellipse at bottom center, #150029 0%, #05000a 60%, #000000 100%);
+  color: #fff;
+  padding: 80px 20px 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Clean cutoff line */
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Top Section (Brand & Socials) --- */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-brand h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  letter-spacing: -1px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #b87fff 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.technetty-tag {
+  color: #a3a3a3;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.technetty-tag span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-socials {
+  text-align: right;
+}
+
+.footer-socials h4 {
+  font-size: 1rem;
+  color: #a3a3a3;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+}
+
+/* Premium Glassmorphic Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(184, 127, 255, 0.5);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(184, 127, 255, 0.3);
+}
+
+/* --- Divider --- */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  margin: 0 0 30px 0;
+}
+
+/* --- Bottom Section (Copyright & Links) --- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between; /* Pushes copyright left, links right on laptop */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: #a3a3a3;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.separator {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+/* ---------- 📱 RESPONSIVE LAYOUT ---------- */
+@media (max-width: 900px) {
+  .footer-bottom {
+    flex-direction: column-reverse; /* Puts copyright on the very bottom */
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 20px 30px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .footer-socials {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-brand h2 {
+    font-size: 2rem;
+  }
+
+  .social-icons a {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .copyright {
+    font-size: 0.85rem;
+  }
+}
