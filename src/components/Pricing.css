@@ -224,18 +224,3 @@
   overflow: hidden; 
 }
 
-.plan-overlay {
-  /* ... Keep all your existing styles here ... */
-  
-  /* ADD THESE 2 LINES: Traps the scroll so it cannot bleed to the background */
-  overscroll-behavior: none;
-  touch-action: none; 
-}
-
-.plan-modal {
-  /* ... Keep all your existing styles here ... */
-
-  /* ADD THESE 2 LINES: Re-enables scrolling ONLY inside the white box */
-  overscroll-behavior: contain;
-  touch-action: pan-y; 
-}

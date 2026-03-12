@@ -9,22 +9,7 @@ const Pricing = () => {
   const [showPlans, setShowPlans] = useState(false);
 
   // 2. Lock background scrolling when the modal is open
-  useEffect(() => {
-    if (showPlans) {
-      // Lock both body and HTML for iOS
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      // Unfreeze
-      document.body.style.overflow = "unset";
-      document.documentElement.style.overflow = "unset";
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-      document.documentElement.style.overflow = "unset";
-    };
-  }, [showPlans]);
+  
   return (
     <section className="pricing">
       <div className="pricing-content">

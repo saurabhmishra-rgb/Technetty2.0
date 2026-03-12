@@ -312,3 +312,56 @@
 .close-btn:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+/* --- PREMIUM MOBILE MODAL FIX --- */
+@media (max-width: 600px) {
+  .plan-modal {
+    width: 96% !important; 
+    padding: 20px 15px !important;
+    max-height: 90dvh !important;
+  }
+
+  /* This forces the white OrderFlow box inside to stretch */
+  .plan-modal > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .close-btn {
+    margin-right: 0px !important; 
+    margin-top: -10px !important;
+  }
+}
+.close-btn {
+  /* 1. Keeps it glued to the top of the modal when you scroll */
+  position: sticky;
+  top: 15px; 
+  
+  /* 2. Pushes it perfectly to the right corner where you drew the circle */
+  margin-left: auto;
+  align-self: flex-end; /* Failsafe just in case the modal uses flexbox */
+  margin-right: -5px; 
+  margin-top: -10px;
+  margin-bottom: 20px; 
+  
+  /* 3. CRITICAL: Locks the size so it NEVER stretches into an oval again */
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  flex-shrink: 0; /* Stops the browser from squishing it */
+  
+  /* 4. Premium visuals */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 99999; /* Keeps it above all your text */
+}
