@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Pricing.css";
 import basicImg from "../assets/basicImg.png"; // Ensure path is correct
 import proImg from "../assets/proImg.png"; // Ensure path is correct
@@ -8,6 +8,23 @@ const Pricing = () => {
   // 1. Add state to control the modal
   const [showPlans, setShowPlans] = useState(false);
 
+  // 2. Lock background scrolling when the modal is open
+  useEffect(() => {
+    if (showPlans) {
+      // Lock both body and HTML for iOS
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      // Unfreeze
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    };
+  }, [showPlans]);
   return (
     <section className="pricing">
       <div className="pricing-content">
@@ -31,7 +48,6 @@ const Pricing = () => {
             <div className="card-info">
               <h3>Basic Reel</h3>
               <p className="price">₹1,499 <span>/ reel</span></p>
-              {/* 2. Attach onClick to open modal */}
               <button className="pricing-btn" onClick={() => setShowPlans(true)}>
                 ORDER BASIC REEL
               </button>
@@ -47,7 +63,6 @@ const Pricing = () => {
             <div className="card-info">
               <h3>Pro Reel</h3>
               <p className="price">₹2,999 <span>/ reel</span></p>
-              {/* 2. Attach onClick to open modal */}
               <button className="pricing-btn pro-btn" onClick={() => setShowPlans(true)}>
                 ORDER PRO REEL
               </button>

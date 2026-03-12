@@ -48,6 +48,22 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (showPlans) {
+      // Lock both body and HTML for iOS
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      // Unfreeze
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    };
+  }, [showPlans]);
   return (
     <section className="hero" ref={containerRef}>
       {/* Background blobs */}
